@@ -1,10 +1,11 @@
 import React from 'react';
 import PhonesContainer from "../components/PhonesContainer.jsx";
+import Hero from "../components/Hero.jsx";
 
 const Home = () => {
     return (
         <div>
-            <h1>Hero section</h1>
+            <Hero></Hero>
             <PhonesContainer></PhonesContainer>
         </div>
     );

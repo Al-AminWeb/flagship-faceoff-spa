@@ -18,13 +18,14 @@ const router = createBrowserRouter([
             Component:Home,
         },
             {
-                path:'/phones-container',
-
-            },
-            {
                 path:"/about",
                 element:<About />
-            }
+            },
+            {
+                path:"/favorites",
+                element:<Favorites />
+            },
+
         ]
     },
 
@@ -32,10 +33,7 @@ const router = createBrowserRouter([
         path:"/phone-details",
         element:<PhoneDetails />
     },
-    {
-        path:"/favorite",
-        element:<Favorites />
-    }
+
 
 ]);
 
