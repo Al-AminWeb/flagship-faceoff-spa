@@ -4,12 +4,17 @@ import Footer from "../components/Footer.jsx";
 import {useLoaderData, useParams} from "react-router";
 import {MdBookmarkAdd, MdShoppingCartCheckout} from "react-icons/md";
 import Button from "../components/ui/Button.jsx";
+import {addFavorite} from "../utils/index.js";
 
 const PhoneDetails = () => {
     const data = useLoaderData();
     const {id} = useParams();
     const singlePhones = data.find(phone => phone.id === parseInt(id));
     const {name,image,brand,model,price,description,storage,camera_info} = singlePhones || {}
+    const handleFavorite=()=>{
+        addFavorite(singlePhones);
+    }
+
     return (
         <div>
             <Navbar/>
@@ -23,8 +28,8 @@ const PhoneDetails = () => {
                 <div className='flex justify-between'>
                     <h1 className='text-6xl font-thin mb-8'>{name}</h1>
                     <div className='space-x-4 flex gap-2'>
-                        <Button label= {<MdShoppingCartCheckout/>}/>
-                        <Button label={<MdBookmarkAdd/>}/>
+                        <Button  label= {<MdShoppingCartCheckout/>}/>
+                        <Button onClick={handleFavorite} label={<MdBookmarkAdd/>}/>
                     </div>
                 </div>
                 {/* Details */}
